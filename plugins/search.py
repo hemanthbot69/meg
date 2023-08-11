@@ -31,9 +31,8 @@ async def search(bot, message):
           buttons = []
           for movie in movies: 
               buttons.append([InlineKeyboardButton(movie['title'], callback_data=f"recheck_{movie['id']}")])
-          msg = await message.reply_photo(photo="https://telegra.ph/file/cf6706158b0bfaf436f54.jpg",
-                                          caption="<b><I>I Couldn't find anything related to Your Query😕.\nDid you mean any of these?</I></b>", 
-                                          reply_markup=InlineKeyboardMarkup(buttons))
+          msg = await message.reply_text(text="<b><I>I Couldn't find anything related to Your Query😕.\𝗖𝗵𝗲𝗰𝗸 𝗬𝗼𝘂𝗿 𝗦𝗽𝗲𝗹𝗹𝗶𝗻𝗴 𝗮𝗻𝗱 𝗥𝗲𝗾𝘂𝗲𝘀𝘁 𝗔𝗴𝗮𝗶𝗻 🫡</I></b>")
+                                          
        else:
           msg = await message.reply_text(text=head+results, disable_web_page_preview=True)
        _time = (int(time()) + (15*60))
